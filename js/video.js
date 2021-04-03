@@ -13,6 +13,19 @@ document.querySelector("#play").addEventListener("click", function() {
 });
 
 
+document.querySelector('#orig').addEventListener('click', function(){
+	console.log("Original");
+	video.classList.remove("oldSchool");
+
+});
+
+document.querySelector('#vintage').addEventListener('click', function(){
+	console.log("Vintage");
+	video.classList.remove("oldSchool");
+
+});
+	
+	
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == false)
 	{
@@ -28,16 +41,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 
 
 document.querySelector("#slower").addEventListener("click", function() {
-	video.playbackRate = video.playbackRate * 0.95;
-	console.log("Speed is " + video.playbackRate);
+	video.playbackRate *= 0.95;
+	console.log(video.playbackRate);
 });
 
 
 //for faster, just multiple vs divide, does this not compound/regress
 
 document.querySelector("#faster").addEventListener("click", function() {
-	video.playbackRate = video.playbackRate / 0.95;
-	console.log("Speed is " + video.playbackRate);
+	video.playbackRate *= 1.95;
+	console.log(video.playbackRate);
 });
 
 
@@ -45,14 +58,12 @@ document.querySelector("#faster").addEventListener("click", function() {
 document.querySelector("#skip").addEventListener("click", function() {
 	if (video.currentTime + 15 < video.duration)
 	{
-		video.currentTime = video.currentTime + 15;
 		console.log(video.currentTime);
+		video.currentTime += 15;
 	} 
 	else 
 	{
-		console.log("Going back to the beginning");
 		video.currentTime = 0;
-		console.log(video.currentTime);
 	}
 });
 
