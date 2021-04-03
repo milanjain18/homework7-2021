@@ -1,4 +1,5 @@
-var video;
+var video = document.getElementById("player1");
+console.log("Hello");
 
 window.addEventListener("load", function() {
 	video = document.querySelector(#player1);
@@ -25,6 +26,7 @@ document.querySelector('#vintage').addEventListener('click', function(){
 
 });
 	
+
 	
 document.querySelector("#mute").addEventListener("click", function() {
 	if (video.muted == false)
@@ -39,6 +41,13 @@ document.querySelector("#mute").addEventListener("click", function() {
 	}
 });
 
+document.querySelector("#slider").addEventListener ("change", function()
+{
+	console.log(this.value);
+	var slider = this.value;
+	video.volume = slider / 100;
+	document.querySelector("#volume").innerHTML = video.volume*100+ '%'
+});
 
 document.querySelector("#slower").addEventListener("click", function() {
 	video.playbackRate *= 0.95;
