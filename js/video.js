@@ -1,12 +1,15 @@
 var video;
 
 window.addEventListener("load", function() {
+	video = document.querySelector(#player1);
 	console.log("Good job opening the window")
 
 });
 
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
+	let vol = document.querySelector(#volume).innerHTML = video.volume * 100 + '%';
+	//check with gsi if you can declare with let like that?????
 });
 
 
@@ -30,7 +33,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 });
 
 
-
+//for faster, just multiple vs divide, does this not compound/regress
 
 document.querySelector("#faster").addEventListener("click", function() {
 	video.playbackRate = video.playbackRate / 0.95;
@@ -52,6 +55,9 @@ document.querySelector("#skip").addEventListener("click", function() {
 		console.log(video.currentTime);
 	}
 });
+
+	
+	
 
 
 
